@@ -161,11 +161,17 @@ navigationLinks.forEach(link => {
       if (pageData === pageName || (pageName === "case studies" && pageData === "case studies")) {
         page.classList.add("active");
         navigationLinks.forEach(l => {
-          l.classList.remove("active");
-          l.classList.add("btn-ghost");
+          l.classList.remove("active", "text-primary");
+          l.classList.add("text-base-content/70");
+          if (l.classList.contains("btn-ghost")) {
+            l.classList.add("btn-ghost");
+          }
         });
-        this.classList.add("active");
-        this.classList.remove("btn-ghost");
+        this.classList.add("active", "text-primary");
+        this.classList.remove("text-base-content/70");
+        if (this.classList.contains("btn-ghost")) {
+          this.classList.remove("btn-ghost");
+        }
         window.scrollTo(0, 0);
       } else {
         page.classList.remove("active");
