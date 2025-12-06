@@ -1,157 +1,175 @@
 'use strict';
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+window.EMAILJS_CONFIG = {
+  serviceId: 'service_vv8pzo9',
+  templateId: 'template_hwa5k5g',
+  publicKey: 'IpEwibNO6jUg-gZK7'
+};
 
+if (typeof emailjs !== 'undefined') {
+  emailjs.init(window.EMAILJS_CONFIG.publicKey);
+}
 
-
-// sidebar variables
+const elementToggleFunc = (elem) => elem.classList.toggle("active");
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+if (sidebarBtn) sidebarBtn.addEventListener("click", () => elementToggleFunc(sidebar));
 
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-
-// testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
 
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
+testimonialsItem.forEach(item => {
+  item.addEventListener("click", function() {
+    const avatar = this.querySelector("[data-testimonials-avatar]");
+    const title = this.querySelector("[data-testimonials-title]");
+    const text = this.querySelector("[data-testimonials-text]");
+    if (modalImg && avatar) modalImg.src = avatar.src;
+    if (modalImg && avatar) modalImg.alt = avatar.alt;
+    if (modalTitle && title) modalTitle.innerHTML = title.innerHTML;
+    if (modalText && text) modalText.innerHTML = text.innerHTML;
+    if (modalContainer) modalContainer.showModal();
   });
+});
 
-}
+if (modalCloseBtn) modalCloseBtn.addEventListener("click", () => {
+  if (modalContainer) modalContainer.close();
+});
 
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+if (overlay) overlay.addEventListener("click", () => {
+  if (modalContainer) modalContainer.close();
+});
 
-
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
-  });
-}
-
-// filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
-const filterFunc = function (selectedValue) {
-
-  for (let i = 0; i < filterItems.length; i++) {
-
+const filterFunc = (selectedValue) => {
+  filterItems.forEach(item => {
     if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
+      item.classList.add("active");
+    } else if (selectedValue === item.dataset.category) {
+      item.classList.add("active");
     } else {
-      filterItems[i].classList.remove("active");
+      item.classList.remove("active");
     }
-
-  }
-
-}
-
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
-
-for (let i = 0; i < filterBtn.length; i++) {
-
-  filterBtn[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
-
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-
   });
+};
 
-}
+let lastClickedBtn = filterBtn[0];
+filterBtn.forEach(btn => {
+  btn.addEventListener("click", function() {
+    const selectedValue = this.textContent.toLowerCase();
+    filterFunc(selectedValue);
+    lastClickedBtn.classList.remove("btn-primary");
+    lastClickedBtn.classList.add("btn-ghost");
+    this.classList.remove("btn-ghost");
+    this.classList.add("btn-primary", "active");
+    lastClickedBtn = this;
+  });
+});
 
-
-
-// contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
+const formAlert = document.getElementById("form-alert");
+const formSpinner = document.getElementById("form-spinner");
 
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
+if (formInputs && form) {
+  formInputs.forEach(input => {
+    input.addEventListener("input", () => {
+      if (form.checkValidity()) {
+        if (formBtn) formBtn.removeAttribute("disabled");
+      } else {
+        if (formBtn) formBtn.setAttribute("disabled", "");
+      }
+      if (formAlert) formAlert.classList.add("hidden");
+    });
   });
 }
 
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) return;
+    
+    const formData = new FormData(form);
+    const name = formData.get('from_name');
+    const email = formData.get('from_email');
+    const message = formData.get('message');
+    
+    const isEmailJSConfigured = typeof emailjs !== 'undefined' && 
+                                 window.EMAILJS_CONFIG && 
+                                 window.EMAILJS_CONFIG.serviceId;
+    
+    if (isEmailJSConfigured) {
+      if (formSpinner) formSpinner.classList.remove("hidden");
+      if (formBtn) formBtn.setAttribute("disabled", "");
+      
+      try {
+        await emailjs.sendForm(
+          window.EMAILJS_CONFIG.serviceId,
+          window.EMAILJS_CONFIG.templateId,
+          form,
+          window.EMAILJS_CONFIG.publicKey
+        );
+        
+        formAlert.className = "alert alert-success mb-4";
+        formAlert.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Message sent successfully! I\'ll get back to you soon.</span>';
+        formAlert.classList.remove("hidden");
+        form.reset();
+        if (formBtn) formBtn.setAttribute("disabled", "");
+      } catch (error) {
+        console.error('EmailJS Error:', error);
+        showMailtoFallback(name, email, message);
+      } finally {
+        if (formSpinner) formSpinner.classList.add("hidden");
+        if (formBtn) formBtn.removeAttribute("disabled");
+      }
+    } else {
+      showMailtoFallback(name, email, message);
+    }
+  });
+}
 
+function showMailtoFallback(name, email, message) {
+  const subject = encodeURIComponent(`Contact Form Message from ${name}`);
+  const body = encodeURIComponent(`Hello Ao Tian,\n\nMy name is ${name}.\nMy email is ${email}.\n\n${message}\n\n---\nSent from your personal website contact form`);
+  const mailtoLink = `mailto:ta248006220@gmail.com?subject=${subject}&body=${body}`;
+  
+  formAlert.className = "alert alert-info mb-4";
+  formAlert.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><div><p class="font-bold">Opening your email client...</p><p class="text-sm">If it doesn't open automatically, <a href="${mailtoLink}" class="underline font-bold">click here to email me directly</a></p></div>`;
+  formAlert.classList.remove("hidden");
+  
+  setTimeout(() => {
+    window.location.href = mailtoLink;
+  }, 300);
+}
 
-// page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
+navigationLinks.forEach(link => {
+  link.addEventListener("click", function() {
+    let pageName = this.textContent.toLowerCase().trim();
+    if (pageName === "case studies") pageName = "case studies";
+    pages.forEach(page => {
+      const pageData = page.dataset.page.toLowerCase();
+      if (pageData === pageName || (pageName === "case studies" && pageData === "case studies")) {
+        page.classList.add("active");
+        navigationLinks.forEach(l => {
+          l.classList.remove("active");
+          l.classList.add("btn-ghost");
+        });
+        this.classList.add("active");
+        this.classList.remove("btn-ghost");
         window.scrollTo(0, 0);
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        page.classList.remove("active");
       }
-    }
-
+    });
   });
-}
+});

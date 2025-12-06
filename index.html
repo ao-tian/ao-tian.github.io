@@ -1,1037 +1,610 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ao Tian</title>
-
-  <!--
-    - favicon
-  -->
+  <title>Ao Tian - Computer Science Specialist</title>
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .page { display: none; }
+    .page.active { display: block; animation: fadeIn 0.4s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .project-item { display: none; }
+    .project-item.active { display: block; }
+  </style>
 </head>
-
-<body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.JPG" alt="Ao Tian" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Ao Tian">Ao Tian</h1>
-
-          <p class="title">Computer Science Specialist</p>
+<body class="bg-base-300 min-h-screen">
+  <div class="drawer lg:drawer-open">
+    <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
+      <div class="navbar bg-base-200/80 backdrop-blur-sm sticky top-0 z-50 lg:hidden">
+        <div class="flex-none">
+          <label for="drawer-toggle" class="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </label>
         </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
+        <div class="flex-1">
+          <a class="btn btn-ghost normal-case text-xl font-bold gradient-text">Ao Tian</a>
+        </div>
       </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:ao.tian@mail.utoronto.ca" class="contact-link">ao.tian@mail.utoronto.ca</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+14379722432" class="contact-link">+1 (437) 972-2432</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 9, 2005</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Toronto, Canada</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/ao-tian" class="social-link" target="_blank" rel="noopener noreferrer">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/ao-tian-08440a30b/" class="social-link" target="_blank" rel="noopener noreferrer">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Projects</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Case Studies</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
+      <nav class="hidden lg:flex navbar bg-base-200/80 backdrop-blur-sm sticky top-0 z-50 justify-end px-8 py-4">
+        <div class="flex gap-2">
+          <button class="btn btn-ghost btn-sm active" data-nav-link>About</button>
+          <button class="btn btn-ghost btn-sm" data-nav-link>Resume</button>
+          <button class="btn btn-ghost btn-sm" data-nav-link>Projects</button>
+          <button class="btn btn-ghost btn-sm" data-nav-link>Case Studies</button>
+          <button class="btn btn-ghost btn-sm" data-nav-link>Contact</button>
+        </div>
       </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Hello! My name is Ao Tian, and I study in the <strong>Computer Science Specialist Program & 
-            Statistics Minor Program at the University of Toronto</strong>. I'm passionate about building 
-            reliable, scalable, and intelligent systems that merge the precision of data science 
-            with the creativity of software design. I have extensive experience spanned from 
-            Algorithm Design (D&C, Dynamic Programming, Greedy, Network Flow, Linear Prgramming, randomization
-            , Approximation Algorithms, etc.) and Machine Learning to Software Systems and Web Programming, 
-            providing me with a well-rounded technical foundation and a deep understanding of computational
-            problem-solving.
-          </p>
-
-          <p>
-            For me, programming isn't just about writing efficient code; it's about understanding structure, 
-            predicting behavior, and building tools that make information clearer and technology more human.
-            Outside of coursework, I enjoy collaborating on projects that bring together design, data, and 
-            scalability. I'm particularly interested in how machine learning and cloud technologies can be 
-            used to solve real-world problems — especially those involving automation, efficiency, and 
-            accessibility. Long-term, I aim to work at the intersection of intelligent systems and 
-            large-scale software, where I can contribute to solutions that are both technically robust and
-            socially meaningful.
-          </p>
-
-          <p>
-            <strong><u>Programming Languages:</u></strong>
-          </p>
-
-          <p>
-            <strong>Python &nbsp; &nbsp; Java &nbsp; &nbsp; C &nbsp; &nbsp; C# &nbsp; &nbsp; 
-              C++ &nbsp; &nbsp; SQL &nbsp; &nbsp; HTML &nbsp; &nbsp; CSS &nbsp; &nbsp; 
-              JavaScript &nbsp; &nbsp; R &nbsp; &nbsp; Shell(Bash, Zsh) &nbsp; &nbsp; MATLAB 
-              &nbsp; &nbsp; Haskell &nbsp; &nbsp; Assembly &nbsp; &nbsp; Kotlin
-            </strong>
-          </p>
-
-          <p>
-            <strong><u>Technologies / Frameworks / Tools:</u></strong>
-          </p>
-
-          <p>
-            <strong>React &nbsp; &nbsp; Vue.js &nbsp; &nbsp; Node.js &nbsp; &nbsp; Express.js &nbsp; &nbsp; 
-              PostgreSQL &nbsp; &nbsp; SQLite &nbsp; &nbsp; MongoDB &nbsp; &nbsp; DynamoDB &nbsp; &nbsp; 
-              TensorFlow &nbsp; &nbsp; PyTorch &nbsp; &nbsp; Scikit-learn &nbsp; &nbsp; Pandas &nbsp; &nbsp; 
-              NumPy &nbsp; &nbsp; Matplotlib &nbsp; &nbsp; Jupyter &nbsp; &nbsp; XGBoost &nbsp; &nbsp; GitHub
-              &nbsp; &nbsp; REST &nbsp; &nbsp; JUnit &nbsp; &nbsp; Pytest &nbsp; &nbsp; Selenium &nbsp;
-              Postman &nbsp; &nbsp; Figma &nbsp; &nbsp; LaTeX &nbsp; &nbsp; AWS
-            </strong>
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Algorithm Optimization</h4>
-
-                <p class="service-item-text">
-                  Improving performance through data structure selection, time complexity reduction, and memory-efficient implementation.
-                  Refactoring code for both clarity and computational efficiency. I value scalability under real-world constraints.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Software Engineering</h4>
-
-                <p class="service-item-text">
-                  Improving the efficiency, scalability, and stability of applications. Building reliable backend systems 
-                  that handle high loads with minimal latency. (Caching, asynchronous processing, and database indexing)
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">System Design</h4>
-
-                <p class="service-item-text">
-                  Working with service-oriented architectures, designing RESTful APIs, and implementing microservices. 
-                  I am familiar with tools for continuous integration and live deployment, as well as monitoring solutions
-                  that track system health and uptime.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Collaborative Experience</h4>
-
-                <p class="service-item-text">
-                  Beyond coursework, I actively engage in project-based and community technical work. 
-                  I have participated in collaborative software projects, university hackathons, and research 
-                  initiatives that required both teamwork and creativity.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Department Supervisor</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    “Ao contributed valuable insights to our data analytics division during his internship. 
-                    He developed and validated forecasting models in Python and scikit-learn to predict 
-                    passenger flow and retail demand, helping our team improve operational planning and 
-                    non-aeronautical revenue analysis. Ao also automated several ETL workflows that 
-                    integrated flight, sales, and operational datasets, greatly improving data consistency 
-                    and reporting efficiency. He demonstrated strong technical depth, reliability, and an 
-                    exceptional ability to translate complex analytics into practical business insights.”
-                  </p>
+      <main class="flex-1 p-4 lg:p-8 max-w-7xl mx-auto w-full">
+        <article class="page active" data-page="about">
+          <div class="card bg-base-200 shadow-xl mb-6">
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-bold mb-6">About Me</h2>
+              <div class="prose prose-invert max-w-none">
+                <p class="text-base-content/80 leading-relaxed mb-4">Hello! My name is Ao Tian, and I study in the <strong>Computer Science Specialist Program & Statistics Minor Program at the University of Toronto</strong>. I'm passionate about building reliable, scalable, and intelligent systems that merge the precision of data science with the creativity of software design. I have extensive experience spanned from Algorithm Design (D&C, Dynamic Programming, Greedy, Network Flow, Linear Programming, randomization, Approximation Algorithms, etc.) and Machine Learning to Software Systems and Web Programming, providing me with a well-rounded technical foundation and a deep understanding of computational problem-solving.</p>
+                <p class="text-base-content/80 leading-relaxed mb-4">For me, programming isn't just about writing efficient code; it's about understanding structure, predicting behavior, and building tools that make information clearer and technology more human. Outside of coursework, I enjoy collaborating on projects that bring together design, data, and scalability. I'm particularly interested in how machine learning and cloud technologies can be used to solve real-world problems — especially those involving automation, efficiency, and accessibility. Long-term, I aim to work at the intersection of intelligent systems and large-scale software, where I can contribute to solutions that are both technically robust and socially meaningful.</p>
+                <div class="my-6">
+                  <h3 class="text-xl font-semibold mb-3">Programming Languages:</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-lg badge-primary">Python</span>
+                    <span class="badge badge-lg badge-secondary">Java</span>
+                    <span class="badge badge-lg badge-accent">C</span>
+                    <span class="badge badge-lg badge-primary">C#</span>
+                    <span class="badge badge-lg badge-secondary">C++</span>
+                    <span class="badge badge-lg badge-accent">SQL</span>
+                    <span class="badge badge-lg badge-primary">HTML</span>
+                    <span class="badge badge-lg badge-secondary">CSS</span>
+                    <span class="badge badge-lg badge-accent">JavaScript</span>
+                    <span class="badge badge-lg badge-primary">R</span>
+                    <span class="badge badge-lg badge-secondary">Shell</span>
+                    <span class="badge badge-lg badge-accent">MATLAB</span>
+                    <span class="badge badge-lg badge-primary">Haskell</span>
+                    <span class="badge badge-lg badge-secondary">Assembly</span>
+                    <span class="badge badge-lg badge-accent">Kotlin</span>
+                  </div>
                 </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>DB Peers</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    "Ao combines a deep technical foundation with genuine teamwork and mentorship.
-                    During our database systems course, he helped the group refactor inefficient queries,
-                    optimize indexes, and achieve near-instant response times. His clarity and supportiveness
-                    make him a pleasure to work with."
-                  </p>
+                <div class="my-6">
+                  <h3 class="text-xl font-semibold mb-3">Technologies / Frameworks / Tools:</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-outline badge-lg">React</span>
+                    <span class="badge badge-outline badge-lg">Vue.js</span>
+                    <span class="badge badge-outline badge-lg">Node.js</span>
+                    <span class="badge badge-outline badge-lg">Express.js</span>
+                    <span class="badge badge-outline badge-lg">PostgreSQL</span>
+                    <span class="badge badge-outline badge-lg">SQLite</span>
+                    <span class="badge badge-outline badge-lg">MongoDB</span>
+                    <span class="badge badge-outline badge-lg">DynamoDB</span>
+                    <span class="badge badge-outline badge-lg">TensorFlow</span>
+                    <span class="badge badge-outline badge-lg">PyTorch</span>
+                    <span class="badge badge-outline badge-lg">Scikit-learn</span>
+                    <span class="badge badge-outline badge-lg">Pandas</span>
+                    <span class="badge badge-outline badge-lg">NumPy</span>
+                    <span class="badge badge-outline badge-lg">Matplotlib</span>
+                    <span class="badge badge-outline badge-lg">Jupyter</span>
+                    <span class="badge badge-outline badge-lg">XGBoost</span>
+                    <span class="badge badge-outline badge-lg">GitHub</span>
+                    <span class="badge badge-outline badge-lg">REST</span>
+                    <span class="badge badge-outline badge-lg">JUnit</span>
+                    <span class="badge badge-outline badge-lg">Pytest</span>
+                    <span class="badge badge-outline badge-lg">Selenium</span>
+                    <span class="badge badge-outline badge-lg">Postman</span>
+                    <span class="badge badge-outline badge-lg">Figma</span>
+                    <span class="badge badge-outline badge-lg">LaTeX</span>
+                    <span class="badge badge-outline badge-lg">AWS</span>
+                  </div>
                 </div>
-
               </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>PHD Student Pan Chen</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    "I supervised Ao during his software engineering coursework and research integration project.
-                    His ability to translate complex computational problems into efficient, readable algorithms
-                    impressed both peers and instructors. Ao’s precision, patience, and creative approach to
-                    problem-solving make him a strong candidate for research and software development roles alike."
-                  </p>
-                </div>
-
-              </div>
-            </li>
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
             </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">August, 2025</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Associations</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/images/logo-1-color.jpg" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.cssu.ca/" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.airport-suppliers.com/airport/shanghai-pudong-international-airport/" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.kaggle.com/competitions/google-tunix-hackathon?utm_medium=email&utm_source=gamma&utm_campaign=comp-tunix-2025" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/images/logo-4-color.webp" alt="client logo">
-              </a>
-            </li>
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
           </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University Toronto</h4>
-
-              <span>2023 — Present</span>
-
-              <p class="timeline-text">
-                I am pursuing a rigorous Honours Bachelor of Science at the University of Toronto, 
-                specializing in Computer Science with a minor in Statistics. My studies focus on 
-                algorithm design, software systems, and applied machine learning — combining computational 
-                theory with hands-on engineering practice.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Data Analyst (Shanghai International Airport Co., Ltd)</h4>
-
-              <span>May 2025 — August 2025</span>
-
-              <p class="timeline-text">
-                Developed and validated forecasting models in Python and scikit-learn (linear regression, 
-                decision trees, random forests) to predict passenger flow and retail demand, supporting 
-                revenue optimization and planning. Automated ETL workflows in SQL and Python to integrate 
-                flight, sales, and operational data, ensuring cross-departmental data quality and consistency. 
-                Created Excel-based visualizations and statistical reports to monitor key performance metrics 
-                and identify revenue trends. Collaborated with data analysts and business managers to 
-                translate analytical results into actionable strategies, improving operational 
-                decision-making.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Computer Science Tutor (Self-Employed)</h4>
-
-              <span>May 2024 - August 2024</span>
-
-              <p class="timeline-text">
-                Provided one-on-one and small-group instruction on core computer science concepts, 
-                including object-oriented programming, recursion, and algorithm design. Designed 
-                personalized lesson materials and exercises to reinforce conceptual understanding 
-                and problem-solving skills. Supported students in debugging code and building confidence 
-                in Python and Java fundamentals. Improved student exam performance and engagement 
-                through structured tutoring and interactive sessions.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Certifications</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">AWS Certified Cloud Practitioner</h5>
-                <data value="80">Proficiency Required</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">AWS Certified AI Practitioner</h5>
-                <data value="70">Proficiency Required</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">AWS Certified Machine Learning Engineer - Associate</h5>
-                <data value="90">Proficiency Required</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">AWS Certified Solutions Architect - Associate</h5>
-                <data value="50">Proficiency Required</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 100%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="projects">
-
-        <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Systems Programming</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Full-Stack Development</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Machine Learning</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Made for Fun</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>systems programming</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>full-stack development</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>machine learning</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>made for fun</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="full-stack development">
-              <a href="https://github.com/ao-tian/Netflix-Movie-Explorer" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+          <div class="card bg-base-200 shadow-xl mb-6">
+            <div class="card-body">
+              <h3 class="card-title text-2xl font-bold mb-6">What I'm Doing</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card bg-base-300 shadow-lg">
+                  <div class="card-body">
+                    <div class="flex items-center gap-4 mb-3">
+                      <div class="p-3 bg-primary/20 rounded-lg">
+                        <img src="./assets/images/icon-design.svg" alt="design icon" class="w-8 h-8" />
+                      </div>
+                      <h4 class="card-title text-lg">Algorithm Optimization</h4>
+                    </div>
+                    <p class="text-base-content/70 text-sm leading-relaxed">Improving performance through data structure selection, time complexity reduction, and memory-efficient implementation. Refactoring code for both clarity and computational efficiency. I value scalability under real-world constraints.</p>
                   </div>
-
-                  <img src="./assets/images/project-5.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Netflix Movie Explorer (Vue/JavaScript/CSS)</h3>
-
-                <p class="project-category">Responsive Vue 3 application</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="systems programming">
-              <a href="https://github.com/ao-tian/Dr.Mario-Assembly" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Dr. Mario (MIPS Assembly)</h3>
-
-                <p class="project-category">Retro Game</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="full-stack development">
-              <a href="https://github.com/ao-tian/Second_Hand_Book_Transaction_Platform" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Second Hand Book Transaction Platform (Java)</h3>
-
-                <p class="project-category">Modular Design follows Clean Architecture</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="made for fun">
-              <a href="https://github.com/ao-tian/Random-Movie-Fetcher" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Movie Fetcher (HTML/CSS/JavaScript)</h3>
-
-                <p class="project-category">Vue 3 + Vite</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.webp" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">ML-Based Assistant Selector (NLP Classification)</h3>
-
-                <p class="project-category">A text-classification model that predicts the best AI assistant for a user based on their written preferences and usage context.</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="full-stack development">
-              <a href="" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Stellar Points — Full-Stack Loyalty & Rewards Platform</h3>
-
-                <p class="project-category">Full-stack, role-based, production-ready, and database-driven web application</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="made for fun">
-              <a href="https://github.com/ao-tian/Jay-Chou" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Jay Chou Fan Website (HTML/CSS)</h3>
-
-                <p class="project-category">Album Showcase</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="machine learning">
-              <a href="https://github.com/ao-tian/UofT_Course_Recommendation_System" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">UofT Course Recommendation System (Python)</h3>
-
-                <p class="project-category">Classic Graph Based Recommender</p>
-
-              </a>
-            </li>
-
-
-            <li class="project-item  active" data-filter-item data-category="made for fun">
-              <a href="https://github.com/ao-tian/Interactive_Text_Adventure" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">CampusQuest (Python)</h3>
-
-                <p class="project-category">Text Based Adventure Game</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="case studies">
-
-        <header>
-          <h2 class="h2 article-title">Case Studies</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/CaseStudy-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">High Fidelity Prototype</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Nov, 2025</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Online Impulse Buying Neutralizer</h3>
-
-                  <p class="blog-text">
-                    Research-driven prototype that reduces harmful impulse purchases by inserting smart, 
-                    in-context guardrails across the full journey—from social-media discovery to checkout 
-                    and post-purchase.
-                  </p>
-
                 </div>
-
-              </a>
-            </li>
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23093.454777202827!2d-79.39971423261463!3d43.65478725052874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb34d27310bd%3A0xba15d20622070393!2sDowntown%20Toronto%2C%20Toronto%2C%20ON!5e0!3m2!1sen!2sca!4v1762736355161!5m2!1sen!2sca" 
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+                <div class="card bg-base-300 shadow-lg">
+                  <div class="card-body">
+                    <div class="flex items-center gap-4 mb-3">
+                      <div class="p-3 bg-secondary/20 rounded-lg">
+                        <img src="./assets/images/icon-dev.svg" alt="Web development icon" class="w-8 h-8" />
+                      </div>
+                      <h4 class="card-title text-lg">Software Engineering</h4>
+                    </div>
+                    <p class="text-base-content/70 text-sm leading-relaxed">Improving the efficiency, scalability, and stability of applications. Building reliable backend systems that handle high loads with minimal latency. (Caching, asynchronous processing, and database indexing)</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg">
+                  <div class="card-body">
+                    <div class="flex items-center gap-4 mb-3">
+                      <div class="p-3 bg-accent/20 rounded-lg">
+                        <img src="./assets/images/icon-app.svg" alt="mobile app icon" class="w-8 h-8" />
+                      </div>
+                      <h4 class="card-title text-lg">System Design</h4>
+                    </div>
+                    <p class="text-base-content/70 text-sm leading-relaxed">Working with service-oriented architectures, designing RESTful APIs, and implementing microservices. I am familiar with tools for continuous integration and live deployment, as well as monitoring solutions that track system health and uptime.</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg">
+                  <div class="card-body">
+                    <div class="flex items-center gap-4 mb-3">
+                      <div class="p-3 bg-primary/20 rounded-lg">
+                        <img src="./assets/images/icon-photo.svg" alt="camera icon" class="w-8 h-8" />
+                      </div>
+                      <h4 class="card-title text-lg">Collaborative Experience</h4>
+                    </div>
+                    <p class="text-base-content/70 text-sm leading-relaxed">Beyond coursework, I actively engage in project-based and community technical work. I have participated in collaborative software projects, university hackathons, and research initiatives that required both teamwork and creativity.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
+          </div>
+          <div class="card bg-base-200 shadow-xl mb-6">
+            <div class="card-body">
+              <h3 class="card-title text-2xl font-bold mb-6">Testimonials</h3>
+              <div class="carousel carousel-center w-full gap-4 p-4">
+                <div class="carousel-item">
+                  <div class="card bg-base-300 shadow-lg w-80" data-testimonials-item>
+                    <div class="card-body">
+                      <div class="flex items-center gap-3 mb-3">
+                        <div class="avatar">
+                          <div class="w-12 rounded-full">
+                            <img src="./assets/images/avatar-3.png" alt="Department Supervisor" data-testimonials-avatar />
+                          </div>
+                        </div>
+                        <div>
+                          <h4 class="font-semibold" data-testimonials-title>Department Supervisor</h4>
+                        </div>
+                      </div>
+                      <p class="text-base-content/70 text-sm" data-testimonials-text>"Ao contributed valuable insights to our data analytics division during his internship. He developed and validated forecasting models in Python and scikit-learn to predict passenger flow and retail demand, helping our team improve operational planning and non-aeronautical revenue analysis. Ao also automated several ETL workflows that integrated flight, sales, and operational datasets, greatly improving data consistency and reporting efficiency. He demonstrated strong technical depth, reliability, and an exceptional ability to translate complex analytics into practical business insights."</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card bg-base-300 shadow-lg w-80" data-testimonials-item>
+                    <div class="card-body">
+                      <div class="flex items-center gap-3 mb-3">
+                        <div class="avatar">
+                          <div class="w-12 rounded-full">
+                            <img src="./assets/images/avatar-2.png" alt="DB Peers" data-testimonials-avatar />
+                          </div>
+                        </div>
+                        <div>
+                          <h4 class="font-semibold" data-testimonials-title>DB Peers</h4>
+                        </div>
+                      </div>
+                      <p class="text-base-content/70 text-sm" data-testimonials-text>"Ao combines a deep technical foundation with genuine teamwork and mentorship. During our database systems course, he helped the group refactor inefficient queries, optimize indexes, and achieve near-instant response times. His clarity and supportiveness make him a pleasure to work with."</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card bg-base-300 shadow-lg w-80" data-testimonials-item>
+                    <div class="card-body">
+                      <div class="flex items-center gap-3 mb-3">
+                        <div class="avatar">
+                          <div class="w-12 rounded-full">
+                            <img src="./assets/images/avatar-1.png" alt="PHD Student Pan Chen" data-testimonials-avatar />
+                          </div>
+                        </div>
+                        <div>
+                          <h4 class="font-semibold" data-testimonials-title>PHD Student Pan Chen</h4>
+                        </div>
+                      </div>
+                      <p class="text-base-content/70 text-sm" data-testimonials-text>"I supervised Ao during his software engineering coursework and research integration project. His ability to translate complex computational problems into efficient, readable algorithms impressed both peers and instructors. Ao's precision, patience, and creative approach to problem-solving make him a strong candidate for research and software development roles alike."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+              <h3 class="card-title text-2xl font-bold mb-6">Associations</h3>
+              <div class="flex flex-wrap gap-6 justify-center items-center">
+                <a href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+                  <img src="./assets/images/logo-1-color.jpg" alt="University of Toronto" class="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+                </a>
+                <a href="https://www.cssu.ca/" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+                  <img src="./assets/images/logo-2-color.png" alt="CSSU" class="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+                </a>
+                <a href="https://www.airport-suppliers.com/airport/shanghai-pudong-international-airport/" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+                  <img src="./assets/images/logo-3-color.png" alt="Shanghai Pudong International Airport" class="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+                </a>
+                <a href="https://www.kaggle.com/competitions/google-tunix-hackathon?utm_medium=email&utm_source=gamma&utm_campaign=comp-tunix-2025" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+                  <img src="./assets/images/logo-4-color.webp" alt="Kaggle" class="h-16 object-contain grayscale hover:grayscale-0 transition-all" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="page" data-page="resume">
+          <div class="card bg-base-200 shadow-xl mb-6">
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-bold mb-6">Resume</h2>
+              <div class="divider"></div>
+              <div class="mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-primary/20 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                  </div>
+                  <h3 class="text-2xl font-bold">Education</h3>
+                </div>
+                <div class="ml-16 border-l-2 border-primary pl-6 pb-6">
+                  <h4 class="text-xl font-semibold mb-2">University of Toronto</h4>
+                  <span class="badge badge-primary mb-3">2023 — Present</span>
+                  <p class="text-base-content/80 leading-relaxed">I am pursuing a rigorous Honours Bachelor of Science at the University of Toronto, specializing in Computer Science with a minor in Statistics. My studies focus on algorithm design, software systems, and applied machine learning — combining computational theory with hands-on engineering practice.</p>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="mb-8">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-secondary/20 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  </div>
+                  <h3 class="text-2xl font-bold">Experience</h3>
+                </div>
+                <div class="ml-16 space-y-8">
+                  <div class="border-l-2 border-secondary pl-6">
+                    <h4 class="text-xl font-semibold mb-2">Data Analyst (Shanghai International Airport Co., Ltd)</h4>
+                    <span class="badge badge-secondary mb-3">May 2025 — August 2025</span>
+                    <p class="text-base-content/80 leading-relaxed">Developed and validated forecasting models in Python and scikit-learn (linear regression, decision trees, random forests) to predict passenger flow and retail demand, supporting revenue optimization and planning. Automated ETL workflows in SQL and Python to integrate flight, sales, and operational data, ensuring cross-departmental data quality and consistency. Created Excel-based visualizations and statistical reports to monitor key performance metrics and identify revenue trends. Collaborated with data analysts and business managers to translate analytical results into actionable strategies, improving operational decision-making.</p>
+                  </div>
+                  <div class="border-l-2 border-secondary pl-6">
+                    <h4 class="text-xl font-semibold mb-2">Computer Science Tutor (Self-Employed)</h4>
+                    <span class="badge badge-secondary mb-3">May 2024 - August 2024</span>
+                    <p class="text-base-content/80 leading-relaxed">Provided one-on-one and small-group instruction on core computer science concepts, including object-oriented programming, recursion, and algorithm design. Designed personalized lesson materials and exercises to reinforce conceptual understanding and problem-solving skills. Supported students in debugging code and building confidence in Python and Java fundamentals. Improved student exam performance and engagement through structured tutoring and interactive sessions.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-6">Certifications</h3>
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex justify-between items-center mb-2">
+                      <h5 class="font-semibold">AWS Certified Cloud Practitioner</h5>
+                      <span class="text-sm text-base-content/60">Proficiency Required</span>
+                    </div>
+                    <progress class="progress progress-primary w-full" value="50" max="100"></progress>
+                  </div>
+                  <div>
+                    <div class="flex justify-between items-center mb-2">
+                      <h5 class="font-semibold">AWS Certified AI Practitioner</h5>
+                      <span class="text-sm text-base-content/60">Proficiency Required</span>
+                    </div>
+                    <progress class="progress progress-secondary w-full" value="50" max="100"></progress>
+                  </div>
+                  <div>
+                    <div class="flex justify-between items-center mb-2">
+                      <h5 class="font-semibold">AWS Certified Machine Learning Engineer - Associate</h5>
+                      <span class="text-sm text-base-content/60">Proficiency Required</span>
+                    </div>
+                    <progress class="progress progress-accent w-full" value="75" max="100"></progress>
+                  </div>
+                  <div>
+                    <div class="flex justify-between items-center mb-2">
+                      <h5 class="font-semibold">AWS Certified Solutions Architect - Associate</h5>
+                      <span class="text-sm text-base-content/60">Proficiency Required</span>
+                    </div>
+                    <progress class="progress progress-primary w-full" value="100" max="100"></progress>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="page" data-page="projects">
+          <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-bold mb-6">Projects</h2>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <button class="btn btn-sm btn-primary filter-btn active" data-filter-btn>All</button>
+                <button class="btn btn-sm btn-ghost filter-btn" data-filter-btn>Systems Programming</button>
+                <button class="btn btn-sm btn-ghost filter-btn" data-filter-btn>Full-Stack Development</button>
+                <button class="btn btn-sm btn-ghost filter-btn" data-filter-btn>Machine Learning</button>
+                <button class="btn btn-sm btn-ghost filter-btn" data-filter-btn>Made for Fun</button>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="full-stack development">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-5.png" alt="Netflix Movie Explorer" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/Netflix-Movie-Explorer" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">Netflix Movie Explorer</h3>
+                    <p class="text-base-content/70 text-sm">Responsive Vue 3 application</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="systems programming">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-1.jpg" alt="Dr. Mario" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/Dr.Mario-Assembly" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">Dr. Mario (MIPS Assembly)</h3>
+                    <p class="text-base-content/70 text-sm">Retro Game</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="full-stack development">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-2.png" alt="Second Hand Book Transaction Platform" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/Second_Hand_Book_Transaction_Platform" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">Second Hand Book Transaction Platform</h3>
+                    <p class="text-base-content/70 text-sm">Modular Design follows Clean Architecture</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="made for fun">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-3.png" alt="Movie Fetcher" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/Random-Movie-Fetcher" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">Movie Fetcher</h3>
+                    <p class="text-base-content/70 text-sm">Vue 3 + Vite</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="machine learning">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-8.webp" alt="Model Detective" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/Model-Detective" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">Model Detective (NLP Classification)</h3>
+                    <p class="text-base-content/70 text-sm">ML classifier that identifies which AI model (ChatGPT, Claude, or Gemini) user feedback refers to based on survey responses and text descriptions.</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="full-stack development">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-9.jpg" alt="Stellar Points" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/Stellar-Points" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">Stellar Points — Full-Stack Loyalty & Rewards Platform</h3>
+                    <p class="text-base-content/70 text-sm">A comprehensive points-based reward system with role-based access control for managing transactions, events, and user rewards.</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="made for fun">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-4.png" alt="Jay Chou Fan Website" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/Jay-Chou" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">Jay Chou Fan Website</h3>
+                    <p class="text-base-content/70 text-sm">Album Showcase</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="machine learning">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-6.png" alt="UofT Course Recommendation System" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/UofT_Course_Recommendation_System" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">UofT Course Recommendation System</h3>
+                    <p class="text-base-content/70 text-sm">Classic Graph Based Recommender</p>
+                  </div>
+                </div>
+                <div class="card bg-base-300 shadow-lg project-item active" data-filter-item data-category="made for fun">
+                  <figure class="relative overflow-hidden rounded-t-2xl">
+                    <img src="./assets/images/project-7.png" alt="CampusQuest" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <a href="https://github.com/ao-tian/Interactive_Text_Adventure" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+                    </div>
+                  </figure>
+                  <div class="card-body">
+                    <h3 class="card-title">CampusQuest</h3>
+                    <p class="text-base-content/70 text-sm">Text Based Adventure Game</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="page" data-page="case studies">
+          <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-bold mb-6">Case Studies</h2>
+              <div class="card bg-base-300 shadow-lg">
+                <figure class="relative overflow-hidden">
+                  <img src="./assets/images/CaseStudy-1.jpg" alt="Online Impulse Buying Neutralizer" class="w-full h-64 object-cover" />
+                </figure>
+                <div class="card-body">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="badge badge-outline">High Fidelity Prototype</span>
+                    <span class="text-base-content/60 text-sm">Nov, 2025</span>
+                  </div>
+                  <h3 class="card-title">Online Impulse Buying Neutralizer</h3>
+                  <p class="text-base-content/70">Research-driven prototype that reduces harmful impulse purchases by inserting smart, in-context guardrails across the full journey—from social-media discovery to checkout and post-purchase.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="page" data-page="contact">
+          <div class="card bg-base-200 shadow-xl mb-6">
+            <div class="card-body">
+              <h2 class="card-title text-3xl font-bold mb-6">Get In Touch</h2>
+              <p class="text-base-content/70 mb-8 text-lg">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <a href="mailto:ta248006220@gmail.com" class="card bg-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                  <div class="card-body items-center text-center">
+                    <div class="p-4 bg-primary/20 rounded-full mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="card-title text-lg">Email</h3>
+                    <p class="text-base-content/70 text-sm">ta248006220@gmail.com</p>
+                    <p class="text-xs text-primary mt-2">Click to send email</p>
+                  </div>
+                </a>
+                <a href="tel:+14379722432" class="card bg-base-300 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                  <div class="card-body items-center text-center">
+                    <div class="p-4 bg-secondary/20 rounded-full mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                    </div>
+                    <h3 class="card-title text-lg">Phone</h3>
+                    <p class="text-base-content/70 text-sm">+1 (437) 972-2432</p>
+                    <p class="text-xs text-secondary mt-2">Click to call</p>
+                  </div>
+                </a>
+                <div class="card bg-base-300 shadow-lg">
+                  <div class="card-body items-center text-center">
+                    <div class="p-4 bg-accent/20 rounded-full mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    </div>
+                    <h3 class="card-title text-lg">Location</h3>
+                    <p class="text-base-content/70 text-sm">Toronto, Canada</p>
+                    <p class="text-xs text-accent mt-2">Available for remote work</p>
+                  </div>
+                </div>
+              </div>
+              <div class="divider">Or send a message</div>
+              <div class="h-64 w-full rounded-2xl overflow-hidden mb-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23093.454777202827!2d-79.39971423261463!3d43.65478725052874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb34d27310bd%3A0xba15d20622070393!2sDowntown%20Toronto%2C%20Toronto%2C%20ON!5e0!3m2!1sen!2sca!4v1762736355161!5m2!1sen!2sca" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-2xl"></iframe>
+              </div>
+              <h3 class="text-2xl font-bold mb-4">Contact Form</h3>
+              <div id="form-alert" class="alert hidden mb-4"></div>
+              <form class="space-y-4" data-form id="contact-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input type="text" name="from_name" placeholder="Your Name" class="input input-bordered w-full" required data-form-input />
+                  <input type="email" name="from_email" placeholder="Your Email Address" class="input input-bordered w-full" required data-form-input />
+                </div>
+                <textarea name="message" placeholder="Your Message" class="textarea textarea-bordered w-full h-32" required data-form-input></textarea>
+                <button type="submit" class="btn btn-primary w-full md:w-auto" data-form-btn>
+                  <span class="loading loading-spinner hidden" id="form-spinner"></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </article>
+      </main>
     </div>
-
-  </main>
-
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
+    <div class="drawer-side">
+      <label for="drawer-toggle" class="drawer-overlay"></label>
+      <aside class="w-80 bg-base-200 min-h-full p-6">
+        <div class="flex flex-col items-center text-center mb-8">
+          <div class="avatar mb-4">
+            <div class="w-32 rounded-full ring ring-primary ring-offset-base-200 ring-offset-2">
+              <img src="./assets/images/my-avatar.JPG" alt="Ao Tian" />
+            </div>
+          </div>
+          <h1 class="text-2xl font-bold mb-2">Ao Tian</h1>
+          <p class="badge badge-primary">Computer Science Specialist</p>
+        </div>
+        <div class="divider"></div>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center gap-3">
+            <div class="p-2 bg-primary/20 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            <div>
+              <p class="text-xs text-base-content/60">Email</p>
+              <a href="mailto:ao.tian@mail.utoronto.ca" class="text-sm hover:text-primary transition-colors">ao.tian@mail.utoronto.ca</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="p-2 bg-secondary/20 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            </div>
+            <div>
+              <p class="text-xs text-base-content/60">Phone</p>
+              <a href="tel:+14379722432" class="text-sm hover:text-primary transition-colors">+1 (437) 972-2432</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="p-2 bg-accent/20 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            </div>
+            <div>
+              <p class="text-xs text-base-content/60">Birthday</p>
+              <time datetime="2005-06-09" class="text-sm">June 9, 2005</time>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="p-2 bg-primary/20 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            </div>
+            <div>
+              <p class="text-xs text-base-content/60">Location</p>
+              <address class="text-sm not-italic">Toronto, Canada</address>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="flex justify-center gap-4">
+          <a href="https://github.com/ao-tian" target="_blank" rel="noopener noreferrer" class="btn btn-circle btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ao-tian-08440a30b/" target="_blank" rel="noopener noreferrer" class="btn btn-circle btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <dialog class="modal" data-modal-container>
+    <div class="modal-box max-w-2xl">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="avatar">
+          <div class="w-16 rounded-full">
+            <img src="./assets/images/avatar-1.png" alt="Avatar" data-modal-img />
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg" data-modal-title>Name</h3>
+        </div>
+      </div>
+      <div data-modal-text>
+        <p class="text-base-content/80">Testimonial text</p>
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn" data-modal-close-btn>Close</button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button data-overlay>close</button>
+    </form>
+  </dialog>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
-
 </html>
