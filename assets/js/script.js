@@ -15,35 +15,6 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 if (sidebarBtn) sidebarBtn.addEventListener("click", () => elementToggleFunc(sidebar));
 
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-testimonialsItem.forEach(item => {
-  item.addEventListener("click", function() {
-    const avatar = this.querySelector("[data-testimonials-avatar]");
-    const title = this.querySelector("[data-testimonials-title]");
-    const text = this.querySelector("[data-testimonials-text]");
-    if (modalImg && avatar) modalImg.src = avatar.src;
-    if (modalImg && avatar) modalImg.alt = avatar.alt;
-    if (modalTitle && title) modalTitle.innerHTML = title.innerHTML;
-    if (modalText && text) modalText.innerHTML = text.innerHTML;
-    if (modalContainer) modalContainer.showModal();
-  });
-});
-
-if (modalCloseBtn) modalCloseBtn.addEventListener("click", () => {
-  if (modalContainer) modalContainer.close();
-});
-
-if (overlay) overlay.addEventListener("click", () => {
-  if (modalContainer) modalContainer.close();
-});
-
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
